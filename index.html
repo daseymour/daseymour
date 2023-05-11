@@ -70,15 +70,8 @@
           content: strings[i],
           ariaLabel: locations[i][0],
         });
-		// Add listener to marker
-        marker.addListener("click", () => {
-			infowindow.open({
-            anchor: marker,
-            map,
-          });
-        });
 
-		/*
+		
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
             infowindow.setContent(locations[i][0]);
@@ -89,7 +82,7 @@
           });
           };
         })(marker, i));
-		*/
+		
       }
 	  
 
