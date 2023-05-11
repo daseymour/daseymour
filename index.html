@@ -70,7 +70,8 @@
           content: strings[i],
           ariaLabel: locations[i][0],
         });
-
+		
+		print(strings[i]);
 		
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
