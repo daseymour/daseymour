@@ -8,14 +8,41 @@
 <body>
   <h1>Arts Discovery Migration Project</h1>
   <h2>By [Author Names]</h2>
-<div id="map" style="width: 500px; height: 400px;"></div>
+<div id="map" style="width: 1000px; height: 400px;"></div>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&sensor=true">
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: -37.8136, lng: 144.9631 },
-      zoom: 10
-    });
-  }
+	var locations = [
+      ['Northcote', -37.7727, 144.274856, 1],
+      ['Parkville', -37.7870, 144.9513, 2],
+      ['Mitcham', -37.8170, 145.1986, 3],
+      ['Hillside', -37.7870, 144.9513, 4],
+      ['Castlemaine', -37.0575, 144.2155, 5]
+    ];
+  
+	function initMap() {
+		var map = new google.maps.Map(document.getElementById('map'), {
+			center: { lat: -37.8136, lng: 144.9631 },
+			zoom: 10
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		});
+		
+	var infowindow = new google.maps.InfoWindow();
+
+	var marker, i;
+    
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+	  
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+			infowindow.setContent(locations[i][0]);
+			infowindow.open(map, marker);
+			}
+		})(marker, i));
+	}
+}
   initMap();
 </script>
 </body>
