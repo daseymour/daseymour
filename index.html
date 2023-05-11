@@ -2,38 +2,17 @@
 <html>
 <head>
 <title>Arts Discovery Migration Project</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="locatorplus.css" rel="stylesheet">
-    <script src="locatorplus.js"></script>
-    <script>
-      const CONFIGURATION = {
-        "locations": [
-          {"title":"Northcote","address1":"Northcote VIC 3070","address2":"Australia","coords":{"lat":-37.769277564881534,"lng":144.9990451932541},"placeId":"ChIJc-QdInxD1moRUNaMIXVWBAU"},
-          {"title":"Mitcham","address1":"Mitcham VIC 3132","address2":"Australia","coords":{"lat":-37.8163522494501,"lng":145.19367366441804},"placeId":"ChIJeWfClxU51moRYNiMIXVWBAU"},
-          {"title":"Hillside","address1":"Hillside VIC 3037","address2":"Australia","coords":{"lat":-37.69202418067409,"lng":144.74421266441803},"placeId":"ChIJl724Dzj01moRENGMIXVWBAU"},
-          {"title":"Parkville","address1":"Parkville VIC 3052","address2":"Australia","coords":{"lat":-37.77871490634284,"lng":144.94260293558196},"placeId":"ChIJTRICMtdc1moREOeMIXVWBAU"},
-          {"title":"Castlemaine","address1":"Castlemaine VIC","address2":"Australia","coords":{"lat":-37.058053235002646,"lng":144.21805535330353},"placeId":"ChIJxaTMnuAw12oRWzRDvujnRlY"}
-        ],
-        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17,"mapId":""},
-        "mapsApiKey": "AIzaSyBOsqdwAuVWKJnJN8vMAwEUDAt_5UE5OsA",
-        "capabilities": {"input":true,"autocomplete":false,"directions":false,"distanceMatrix":false,"details":false,"actions":false}
-      };
-
-      function initMap() {
-        new LocatorPlus(CONFIGURATION);
-      }
-    </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOsqdwAuVWKJnJN8vMAwEUDAt_5UE5OsA&callback=initMap" async defer></script>
+<link rel="icon" href="data:,">
 </head>
 <body>
   <h1>Arts Discovery Migration Project</h1>
   <h2>By [Author Names]</h2>
-    <div id="map-container">
-      <div id="gmp-map"></div>
-    </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOsqdwAuVWKJnJN8vMAwEUDAt_5UE5OsA&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v6_cA" async defer></script>
+<div id="map" style="width: 1000px; height: 400px;"></div>
+<iframe src="https://storage.googleapis.com/maps-solutions-46ofqd3uce/locator-plus/dvet/locator-plus.html"
+  width="100%" height="100%"
+  style="border:0;"
+  loading="lazy">
+</iframe>
 </body>
 </html>
