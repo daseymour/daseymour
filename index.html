@@ -2,13 +2,6 @@
 <html>
 <head>
 <title>Arts Discovery Migration Project</title>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOsqdwAuVWKJnJN8vMAwEUDAt_5UE5OsA&callback=initMap" async defer></script>
-<link rel="icon" href="data:,">
-</head>
-<body>
-  <h1>Arts Discovery Migration Project</h1>
-  <h2>By [Author Names]</h2>
-<div id="map" style="width: 500px; height: 400px;"></div>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true">
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -16,6 +9,15 @@
       zoom: 10
     });
   }
+ </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOsqdwAuVWKJnJN8vMAwEUDAt_5UE5OsA&callback=initMap" async defer></script>
+<link rel="icon" href="data:,">
+</head>
+<body>
+  <h1>Arts Discovery Migration Project</h1>
+  <h2>By [Author Names]</h2>
+<div id="map" style="width: 500px; height: 400px;"></div>
+<script>
   initMap();
 </script>
 </body>
