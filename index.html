@@ -46,39 +46,49 @@
           "</p>" +
           "</div>" +
           "</div>";
+		  
+		  const ParkvilleString = "data";
+		  const MitchamString = "data";
+		  const HillsideString = "data";
+		  const CastlemaineString = "data";
 
-	  
-	  
+		var strings = [NorthcoteString, ParkvilleString, MitchamString, HillsideString, CastlemaineString];
 	  
 
       var infowindow = new google.maps.InfoWindow();
 
       for (var i = 0; i < locations.length; i++) {
+		// Create marker
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(locations[i][1], locations[i][2]),
           map: map,
           title: locations[i][0]
         });
+		
+		// Create new infowindow
+		infowindow = new google.maps.InfoWindow({
+          content: string[i],
+          ariaLabel: locations[i][0],
+        });
+		// Add listener to marker
+        marker.addListener("click", () => {
+			infowindow.open({
+            anchor: marker,
+            map,
+          });
+        });
 
+		/*
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
             infowindow.setContent(locations[i][0]);
             infowindow.open(map, marker);
           };
         })(marker, i));
+		*/
       }
 	  
-	  // Northcote
-	  const northcotewindow = new google.maps.InfoWindow({
-          content: NorthcoteString,
-          ariaLabel: "Northcote",
-        });
-        locations[1][0].addListener("click", () => {
-			northcotewindow.open({
-            anchor: locations[1][0],
-            map,
-          });
-        });
+
     }
 	
     function loadMap() {
