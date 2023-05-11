@@ -46,12 +46,12 @@
           "</p>" +
           "</div>" +
           "</div>";
-        const infowindow = new google.maps.InfoWindow({
+        const northcotewindow = new google.maps.InfoWindow({
           content: NorthcoteString,
           ariaLabel: "Northcote",
         });
         locations[1][0].addListener("click", () => {
-          infowindow.open({
+          northcotewindow.open({
             anchor: locations[1][0],
             map,
           });
