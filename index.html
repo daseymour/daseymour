@@ -46,12 +46,7 @@
     function loadMap() {
       // Check if the Google Maps API has already been loaded
       if (typeof google === 'object' && typeof google.maps === 'object') {
-		try {
-			initMap();
-		}
-		catch (e) {
-			console.log(e)
-		}
+        initMap();
       } else {
         // Delay the initialization until the Google Maps API is loaded
         setTimeout(loadMap, 100);
