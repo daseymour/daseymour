@@ -47,10 +47,10 @@
           "</div>" +
           "</div>";
 		  
-		  const ParkvilleString = "data";
-		  const MitchamString = "data";
-		  const HillsideString = "data";
-		  const CastlemaineString = "data";
+		  const ParkvilleString = "Parkville";
+		  const MitchamString = "Mitcham";
+		  const HillsideString = "Hillside";
+		  const CastlemaineString = "Castlemaine";
 
 		var strings = [NorthcoteString, ParkvilleString, MitchamString, HillsideString, CastlemaineString];
 	  
@@ -62,7 +62,7 @@
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(locations[i][1], locations[i][2]),
           map: map,
-          title: locations[i][0]
+          title: locations[i][0],
         });
 		
 		// Create new infowindow
@@ -71,21 +71,25 @@
           ariaLabel: locations[i][0],
         });
 		// Add listener to marker
-        marker.addListener("click", () => {
+        /*marker.addListener("click", () => {
 			infowindow.open({
             anchor: marker,
             map,
           });
-        });
+        });*/
 
-		/*
+		
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
             infowindow.setContent(locations[i][0]);
-            infowindow.open(map, marker);
+            //infowindow.open(map, marker);
+			infowindow.open({
+            anchor: marker,
+            map,
+          });
           };
         })(marker, i));
-		*/
+		
       }
 	  
 
