@@ -46,16 +46,7 @@
           "</p>" +
           "</div>" +
           "</div>";
-        const northcotewindow = new google.maps.InfoWindow({
-          content: NorthcoteString,
-          ariaLabel: "Northcote",
-        });
-        marker.addListener("click", () => {
-          northcotewindow.open({
-            anchor: locations[1][0],
-            map,
-          });
-        });
+
 	  
 	  
 	  
@@ -76,6 +67,18 @@
           };
         })(marker, i));
       }
+	  
+	  // Northcote
+	  const northcotewindow = new google.maps.InfoWindow({
+          content: NorthcoteString,
+          ariaLabel: "Northcote",
+        });
+        locations[1][0].addListener("click", () => {
+			northcotewindow.open({
+            anchor: locations[1][0],
+            map,
+          });
+        });
     }
 	
     function loadMap() {
