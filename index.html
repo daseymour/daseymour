@@ -10,16 +10,14 @@
   <h2>By [Author Names]</h2>
 <div id="map" style="width: 1000px; height: 500px;"></div>
 <script type="text/javascript">
-    var locations = [
-      ['Northcote', -37.7727, 144.9998, 1],
-      ['Parkville', -37.7870, 144.9513, 2],
-      ['Mitcham', -37.8170, 145.1986, 3],
-      ['Hillside', -37.7038, 144.7400, 4],
-      ['Castlemaine', -37.0575, 144.2155, 5]
-    ];
+	const northcote = { lat: -37.7727, lng 144.9998};
+	const parkville = { lat: -38.7870, lng 144.9513};
+	const mitcham = { lat: -37.8170, lng 145.1986};
+	const hillside = { lat: -37.7038, lng 144.7400};
+	const castlemaine = {lat -37.0575, lng 144.2155};
 
     function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
+      const map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: -37.8136, lng: 144.9631 },
         zoom: 7.5,
         mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -46,46 +44,28 @@
           "</p>" +
           "</div>" +
           "</div>";
-		  
-		  const ParkvilleString = "test1";
-		  const MitchamString = "test2";
-		  const HillsideString = "test3";
-		  const CastlemaineString = "test4";
-
-		var strings = [NorthcoteString, ParkvilleString, MitchamString, HillsideString, CastlemaineString];
-	  
-
-      for (var i = 0; i < locations.length; i++) {
-		// Create marker
-        var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-          map: map,
-          title: locations[i][0],
-        });
-		
-		// Create new infowindow
-		var infowindow = new google.maps.InfoWindow({
-          content: strings[i],
-          ariaLabel: locations[i][0],
-        });
-		
-		
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          return function() {
-            infowindow.setContent(locations[i][0]);
-            //infowindow.open(map, marker);
+		const infowindow = new google.maps.InfoWindow({
+			content: NorthcoteString,
+			ariaLabel: "Northcote",
+		});
+		const marker = new google.apps.InfoWindow({
+			position: northcote,
+			map,
+			title: "Northcote",
+		});
+		marker.addListener("click", () => {
 			infowindow.open({
-            anchor: marker,
-            map,
-          });
-          };
-        })(marker, i));
+				anchor: marker,
+				map,
+			});
+		});
 		
-      }
-	  
-
+		
+		const ParkvilleString = "test1";
+		const MitchamString = "test2";
+		const HillsideString = "test3";
+		const CastlemaineString = "test4";
     }
-	
     function loadMap() {
       // Check if the Google Maps API has already been loaded
       if (typeof google === 'object' && typeof google.maps === 'object') {
