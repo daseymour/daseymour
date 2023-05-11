@@ -57,14 +57,14 @@
 
       for (var i = 0; i < locations.length; i++) {
 		// Create marker
-        const marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
           position: new google.maps.LatLng(locations[i][1], locations[i][2]),
           map: map,
           title: locations[i][0],
         });
 		
 		// Create new infowindow
-		const infowindow = new google.maps.InfoWindow({
+		var infowindow = new google.maps.InfoWindow({
           content: strings[i],
           ariaLabel: locations[i][0],
         });
