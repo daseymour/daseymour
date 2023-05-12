@@ -11,7 +11,7 @@
 <div id="map" style="width: 1000px; height: 500px;"></div>
 <script type="text/javascript">
 	const northcote = { lat: -37.7727, lng: 144.9998};
-	const parkville = { lat: -38.7870, lng: 144.9513};
+	const parkville = { lat: -37.7870, lng: 144.9513};
 	const mitcham = { lat: -37.8170, lng: 145.1986};
 	const hillside = { lat: -37.7038, lng: 144.7400};
 	const castlemaine = {lat: -37.0575, lng: 144.2155};
@@ -55,7 +55,7 @@
 		});
 		northcotemarker.addListener("click", () => {
 			infowindow.open({
-				anchor: marker,
+				anchor: northcotemarker,
 				map,
 			});
 		});
@@ -92,7 +92,7 @@
 		});
 		parkvillemarker.addListener("click", () => {
 			infowindow.open({
-				anchor: marker,
+				anchor: parkvillemarker,
 				map,
 			});
 		});		
@@ -129,7 +129,7 @@
 		});
 		mitchammarker.addListener("click", () => {
 			infowindow.open({
-				anchor: marker,
+				anchor: mitchammarker,
 				map,
 			});
 		});	
@@ -166,7 +166,7 @@
 		});
 		hillsidemarker.addListener("click", () => {
 			infowindow.open({
-				anchor: marker,
+				anchor: hillsidemarker,
 				map,
 			});
 		});	
@@ -203,7 +203,7 @@
 		});
 		castlemainemarker.addListener("click", () => {
 			infowindow.open({
-				anchor: marker,
+				anchor: castlemainemarker,
 				map,
 			});
 		});	
