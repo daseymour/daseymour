@@ -54,6 +54,7 @@
 			title: "Northcote",
 		});
 		northcotemarker.addListener("click", () => {
+			closeCurrentInfoWindow();
 			northcoteinfowindow.open({
 				anchor: northcotemarker,
 				map,
@@ -91,6 +92,7 @@
 			title: "Parkville",
 		});
 		parkvillemarker.addListener("click", () => {
+			closeCurrentInfoWindow();
 			parkvilleinfowindow.open({
 				anchor: parkvillemarker,
 				map,
@@ -128,6 +130,7 @@
 			title: "Mitcham",
 		});
 		mitchammarker.addListener("click", () => {
+			closeCurrentInfoWindow();
 			mitchaminfowindow.open({
 				anchor: mitchammarker,
 				map,
@@ -165,6 +168,7 @@
 			title: "Hillside",
 		});
 		hillsidemarker.addListener("click", () => {
+			closeCurrentInfoWindow();
 			hillsideinfowindow.open({
 				anchor: hillsidemarker,
 				map,
@@ -202,6 +206,7 @@
 			title: "Castlemaine",
 		});
 		castlemainemarker.addListener("click", () => {
+			closeCurrentInfoWindow();
 			castlemaineinfowindow.open({
 				anchor: castlemainemarker,
 				map,
@@ -209,6 +214,14 @@
 		});	
     }
 	
+	let currentInfowindow = null; // Variable to store the currently open InfoWindow
+
+	function closeCurrentInfoWindow() {
+		if (currentInfowindow) {
+		currentInfowindow.close();
+		currentInfowindow = null;
+		}
+	}
 	window.initMap = initMap;
     function loadMap() {
       // Check if the Google Maps API has already been loaded
